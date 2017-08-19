@@ -41,7 +41,6 @@ class PoemsController < ApplicationController
   def update
     @poem = Poem.find(params[:id])
     respond_to do |format|
-      binding.pry
       if @poem.update(poem_params)
         format.html { redirect_to @poem, notice: 'Poem was successfully updated.' }
         format.json { render :show, status: :ok, location: @poem }
